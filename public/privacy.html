@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>Privacy — Apex Inference</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #09090b; }
+  body {
+    font-family: ui-monospace, Menlo, Monaco, monospace;
+    color: #d4d4d8; -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 80px 24px 120px; }
+  a { color: #f59e0b; text-decoration: none; }
+  a:hover { color: #fbbf24; }
+  .kicker {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #f59e0b; margin-bottom: 20px;
+  }
+  h1 { font-size: 32px; color: #fafafa; letter-spacing: -0.04em; margin: 0 0 48px; line-height: 1.1; }
+  h2 {
+    font-size: 15px; color: #fafafa; letter-spacing: -0.01em;
+    margin: 44px 0 12px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(39,39,42,.8);
+  }
+  p { font-size: 13px; line-height: 1.8; color: #a1a1aa; margin: 0 0 16px; }
+  .zero {
+    border: 1px solid rgba(245,158,11,.25);
+    background: rgba(245,158,11,.05);
+    color: #fbbf24;
+    padding: 16px 18px;
+    font-size: 13px; line-height: 1.7;
+  }
+  .muted { color: #71717a; font-size: 11px; }
+  .muted a { color: #a1a1aa; }
+  .muted a:hover { color: #f59e0b; }
+  nav { font-size: 11px; margin-bottom: 72px; }
+  nav a { color: #71717a; }
+  nav a:hover { color: #fbbf24; }
+  ul { margin: 0 0 16px; padding-left: 20px; }
+  li { font-size: 13px; line-height: 1.8; color: #a1a1aa; }
+</style>
+</head>
+<body>
+<main>
+  <nav><a href="/">‹ back to apex-inference.xyz</a></nav>
+  <p class="kicker">Apex Inference — Privacy</p>
+  <h1>Privacy Policy</h1>
+
+  <div class="zero">Zero-retention. Prompts and completions are processed exclusively in volatile GPU memory and immediately discarded. No logging or training.</div>
+
+  <h2>1. Data we process</h2>
+  <p>
+    When you call our inference API, the content of your requests (prompts) and the resulting
+    completions are held in GPU memory for the duration of the request and are never written to
+    durable storage. We do not log request bodies, and we do not train on customer traffic.
+  </p>
+
+  <h2>2. What we may log</h2>
+  <p>
+    Operational telemetry is limited to non-content metadata: timestamps, request counts, token
+    counts, latency percentiles, model and pool identifiers, and per-key aggregate usage. This
+    data is used to operate, bill, and secure the service, and is retained no longer than
+    necessary for those purposes.
+  </p>
+
+  <h2>3. Account and contact data</h2>
+  <p>
+    If you contact us, we may process your email address and the content of your message solely
+    to respond to you. We do not sell personal data, and we do not use it for advertising.
+  </p>
+
+  <h2>4. Cookies</h2>
+  <p>
+    The apex-inference.xyz website does not use tracking cookies. No analytics, fingerprinting,
+    or third-party advertising scripts are loaded.
+  </p>
+
+  <h2>5. Transfers and processors</h2>
+  <p>
+    The site and API are served via Cloudflare (a global CDN and edge network). Traffic passes
+    through Cloudflare's network under their data processing agreement and is subject to
+    applicable data protection law.
+  </p>
+
+  <h2>6. Your rights</h2>
+  <p>
+    Because we store no content, there is little to request or delete. For any question about
+    our data practices, contact us at
+    <a href="mailto:admin@apex-inference.xyz">admin@apex-inference.xyz</a>.
+  </p>
+
+  <p class="muted">Last updated: 2026-08-18 · <a href="/terms.html">Terms of Service</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="color-scheme" content="dark" />
+<title>Terms — Apex Inference</title>
+<style>
+  :root { color-scheme: dark; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #09090b; }
+  body {
+    font-family: ui-monospace, Menlo, Monaco, monospace;
+    color: #d4d4d8; -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 760px; margin: 0 auto; padding: 80px 24px 120px; }
+  a { color: #f59e0b; text-decoration: none; }
+  a:hover { color: #fbbf24; }
+  .kicker {
+    font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase;
+    color: #f59e0b; margin-bottom: 20px;
+  }
+  h1 { font-size: 32px; color: #fafafa; letter-spacing: -0.04em; margin: 0 0 48px; line-height: 1.1; }
+  h2 {
+    font-size: 15px; color: #fafafa; letter-spacing: -0.01em;
+    margin: 44px 0 12px; padding-bottom: 8px;
+    border-bottom: 1px solid rgba(39,39,42,.8);
+  }
+  p { font-size: 13px; line-height: 1.8; color: #a1a1aa; margin: 0 0 16px; }
+  .zero {
+    border: 1px solid rgba(245,158,11,.25);
+    background: rgba(245,158,11,.05);
+    color: #fbbf24;
+    padding: 16px 18px;
+    font-size: 13px; line-height: 1.7;
+  }
+  .muted { color: #71717a; font-size: 11px; }
+  .muted a { color: #a1a1aa; }
+  .muted a:hover { color: #f59e0b; }
+  nav { font-size: 11px; margin-bottom: 72px; }
+  nav a { color: #71717a; }
+  nav a:hover { color: #fbbf24; }
+  ul { margin: 0 0 16px; padding-left: 20px; }
+  li { font-size: 13px; line-height: 1.8; color: #a1a1aa; }
+</style>
+</head>
+<body>
+<main>
+  <nav><a href="/">‹ back to apex-inference.xyz</a></nav>
+  <p class="kicker">Apex Inference — Terms</p>
+  <h1>Terms of Service</h1>
+
+  <div class="zero">Zero-retention. Prompts and completions are processed exclusively in volatile GPU memory and immediately discarded. No logging or training.</div>
+
+  <h2>1. The service</h2>
+  <p>
+    Apex Inference provides an API for running large language models on dedicated GPU capacity.
+    Access is granted via API key. Capacity is provisioned as isolated pools; you do not share
+    compute or memory with other customers.
+  </p>
+
+  <h2>2. Use</h2>
+  <p>
+    You agree to use the service in compliance with applicable law and to keep your API keys
+    confidential. You are responsible for activity under your keys. You may not resell access
+    except under a separately executed agreement.
+  </p>
+
+  <h2>3. Acceptable content</h2>
+  <p>
+    You may not use the service to generate or distribute content that violates law, or to run
+    workloads intended to harm, disrupt, or compromise systems. We may suspend access to protect
+    the service or other customers.
+  </p>
+
+  <h2>4. Data and retention</h2>
+  <p>
+    Prompts and completions are processed exclusively in volatile GPU memory and immediately
+    discarded. We do not log request bodies and we do not train on your traffic. Aggregate,
+    non-content usage telemetry may be retained for billing and operations.
+  </p>
+
+  <h2>5. Billing</h2>
+  <p>
+    Usage is billed per token, per the rate agreed for your pool, unless a volume contract
+    applies. Invoices are due net 30. Overdue accounts may be suspended after notice.
+  </p>
+
+  <h2>6. Availability</h2>
+  <p>
+    We target the service levels stated in your agreement, but we do not guarantee uninterrupted
+    availability. Scheduled maintenance and emergencies may cause brief interruptions. We are
+    not liable for indirect or consequential damages arising from use of the service.
+  </p>
+
+  <h2>7. Termination</h2>
+  <p>
+    Either party may terminate the agreement on written notice. On termination, outstanding
+    balances remain due, and your keys are revoked.
+  </p>
+
+  <h2>8. Contact</h2>
+  <p>
+    Questions or disputes: <a href="mailto:admin@apex-inference.xyz">admin@apex-inference.xyz</a>.
+    We will respond within five business days.
+  </p>
+
+  <p class="muted">Last updated: 2026-08-18 · <a href="/privacy.html">Privacy Policy</a></p>
+</main>
+</body>
+</html>
