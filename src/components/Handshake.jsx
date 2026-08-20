@@ -81,6 +81,7 @@ export default function Handshake() {
   const onInput = useCallback((e) => {
     const v = e.target.value.replace(/\D/g, '').slice(0, 6)
     if (e.target.value !== v) e.target.value = v
+    e.target.style.width = Math.max(1, v.length) + 'ch'
     const rps = parseInt(v, 10)
     const set = (ref, txt) => { if (ref.current) ref.current.textContent = txt }
     if (!rps || rps <= 0) {

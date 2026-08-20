@@ -337,6 +337,8 @@ export default function App() {
       if (e.key === '1') document.getElementById('section-infra')?.scrollIntoView({ behavior: 'smooth' })
       if (e.key === '2') document.getElementById('section-roster')?.scrollIntoView({ behavior: 'smooth' })
       if (e.key === '3') document.getElementById('section-policy')?.scrollIntoView({ behavior: 'smooth' })
+      if (e.key === '4') document.getElementById('section-cta')?.scrollIntoView({ behavior: 'smooth' })
+      if (e.key === '5') document.getElementById('section-horizon')?.scrollIntoView({ behavior: 'smooth' })
       if (e.key === 'Escape') window.scrollTo({ top: 0, behavior: 'smooth' })
     }
     window.addEventListener('keydown', handler)
@@ -796,6 +798,8 @@ template_patches     = `}<span className="text-amber-500">9</span>
               <span className="kbd">1</span>
               <span className="kbd">2</span>
               <span className="kbd">3</span>
+              <span className="kbd">4</span>
+              <span className="kbd">5</span>
               <span className="kbd">esc</span>
               <span className="kbd">`</span>
               <span className="text-zinc-800">trace</span>

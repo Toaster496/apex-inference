@@ -256,8 +256,8 @@ body { -webkit-font-smoothing: antialiased; font-feature-settings: 'ss01', 'cv01
 /* ——— handshake input ——— */
 .hs-input {
   background: transparent; border: none; outline: none;
-  color: #e4e4e7; font: inherit; caret-color: #f59e0b;
-  width: 9ch; padding: 0;
+  color: #e4e4e7; font: inherit; caret-color: transparent;
+  width: 1ch; min-width: 1ch; padding: 0;
 }
 .hs-line { min-height: 1.7em; }
 
