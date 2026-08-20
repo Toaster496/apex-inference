@@ -259,6 +259,12 @@ export default function App() {
   const currentSection = useSectionTracker()
   const syncTime = useMemo(() => new Date().toISOString().slice(11, 19), [])
 
+  // ——— open at the top, always ———
+  useEffect(() => {
+    if ('scrollRestoration' in history) history.scrollRestoration = 'manual'
+    window.scrollTo(0, 0)
+  }, [])
+
   // ——— p99 metric bridge (histogram -> header, DOM-direct) ———
   const p99Ref = useRef(null)
   useEffect(() => {

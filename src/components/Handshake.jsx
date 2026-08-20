@@ -221,7 +221,6 @@ export default function Handshake() {
               <input
                 ref={inputRef}
                 inputMode="numeric"
-                autoFocus
                 spellCheck={false}
                 autoComplete="off"
                 className="hs-input"
