@@ -62,6 +62,7 @@ export default function Handshake() {
   const [lines, setLines] = useState([])
   const inputRef = useRef(null)
   const outRef = useRef(null)
+  const cursorRef = useRef(null)
   const timers = useRef([])
   // scratch-panel refs — updated DOM-direct, zero re-renders while typing
   const cRef = useRef(null)
@@ -82,6 +83,7 @@ export default function Handshake() {
     const v = e.target.value.replace(/\D/g, '').slice(0, 6)
     if (e.target.value !== v) e.target.value = v
     e.target.style.width = Math.max(1, v.length) + 'ch'
+    if (cursorRef.current) cursorRef.current.style.marginLeft = v.length === 0 ? '-1ch' : '0'
     const rps = parseInt(v, 10)
     const set = (ref, txt) => { if (ref.current) ref.current.textContent = txt }
     if (!rps || rps <= 0) {
@@ -146,8 +148,10 @@ export default function Handshake() {
     setPhase('idle')
     if (inputRef.current) {
       inputRef.current.value = ''
+      inputRef.current.style.width = '1ch'
       inputRef.current.focus()
     }
+    if (cursorRef.current) cursorRef.current.style.marginLeft = '-1ch'
     const set = (ref) => { if (ref.current) ref.current.textContent = '—' }
     set(cRef); set(kvRef); set(tokRef); set(spRef)
   }, [])
@@ -217,19 +221,22 @@ export default function Handshake() {
           ))}
 
           {phase === 'idle' && (
-            <div className="flex items-center gap-2 mt-1">
+            <div
+              className="flex items-center mt-1"
+              onClick={() => inputRef.current?.focus()}
+            >
               <span className="text-zinc-500">&gt; expected_rps:</span>
               <input
                 ref={inputRef}
                 inputMode="numeric"
                 spellCheck={false}
                 autoComplete="off"
-                className="hs-input"
+                className="hs-input ml-2"
                 onInput={onInput}
                 onKeyDown={onKeyDown}
                 aria-label="expected requests per second"
               />
-              <span className="cursor text-amber-500 pointer-events-none">▊</span>
+              <span ref={cursorRef} className="cursor text-amber-500 pointer-events-none ml-[-1ch]">█</span>
             </div>
           )}
         </div>
