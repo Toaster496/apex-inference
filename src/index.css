@@ -186,7 +186,7 @@ body { -webkit-font-smoothing: antialiased; font-feature-settings: 'ss01', 'cv01
 /* ——— MEGA tooltip ——— */
 .mega-badge { position: relative; cursor: help; }
 .mega-badge::after {
-  content: '1,048,576 tokens'; position: absolute; bottom: calc(100% + 7px); left: 50%;
+  content: '262,144 tokens'; position: absolute; bottom: calc(100% + 7px); left: 50%;
   transform: translateX(-50%) scale(.92); transform-origin: bottom center;
   font-size: 9px; letter-spacing: .08em; color: #fbbf24;
   background: #18181b; border: 1px solid rgba(245,158,11,.3);

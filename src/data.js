@@ -1,6 +1,6 @@
 export const MODELS = [
   ['Qwen/Qwen3.8-27B', '262k', 'Q8_K_M', 'q8_0', 'native', '61.4', 'Day-0', 'LIVE'],
-  ['nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B', '1m', 'NVFP4', 'q8_0', 'native', '148.9', 'MoE A3B', 'LIVE'],
+  ['nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B', '262k', 'NVFP4', 'q8_0', 'native', '148.9', 'MoE A3B', 'LIVE'],
   ['Kwaipilot/KAT-Coder-V2.5-Dev', '262k', 'Q8_K_M', 'q8_0', 'native', '57.2', 'FIM', 'LIVE'],
   ['qwen/qwen3.6-35b-a3b', '262k', 'Q8_K_M', 'q8_0', 'native', '136.0', 'MoE A3B', 'LIVE'],
   ['qwen/qwen3.6-27b', '131k', 'Q8_K_M', 'q8_0', 'native', '64.8', 'stable', 'LIVE'],
@@ -8,7 +8,7 @@ export const MODELS = [
 
 export const MODEL_DETAILS = [
   'prefill 9.2k t/s · chatml-v3 · quanted 2026-02-18 · cache sha1(system_prompt)',
-  'prefill 14.8k t/s · nemotron-v2 · quanted 2026-02-22 · 1,048,576 max tok · nvfp4 on-chip',
+  'prefill 14.8k t/s · nemotron-v2 · quanted 2026-02-22 · 262,144 max tok · nvfp4 on-chip',
   'prefill 8.9k t/s · fim-v1 · quanted 2026-02-19 · fill-in-middle native · fim_prefix/suffix',
   'prefill 12.1k t/s · chatml-v3.1 · quanted 2026-02-21 · 3b active params · moe sparse',
   'prefill 9.8k t/s · chatml-v3.1 · quanted 2026-02-14 · cache sha1(system_prompt)',
@@ -24,7 +24,7 @@ export const INFRA = [
     body: 'K and V both at __q8_0__. Not fp16-pretending. Measured against fp16 baseline on long-context recall before rollout. Delta was inside noise.',
   },
   {
-    title: '1M tokens. No OOM.',
+    title: '262k tokens. No OOM.',
     body: 'Full advertised context window. You can fill it. Nobody quietly truncates at 32k and returns a confident hallucination about the file you pasted.',
   },
   {
@@ -98,7 +98,7 @@ export const MACHINE_DUMP = `>> init apex-inference :: bypass marketing layers :
   flash_attn=on
   cache_type_k=q8_0
   cache_type_v=q8_0
-  n_ctx=1048576
+  n_ctx=262144
   n_parallel=16
   slot_save_path=/dev/null
   defrag_thold=0.10
@@ -106,7 +106,7 @@ export const MACHINE_DUMP = `>> init apex-inference :: bypass marketing layers :
 
 [loaded_models]
   qwen/qwen3.8-27b                              ctx=262144   quant=q8_k_m  tps=61.4   tag=day0
-  nvidia/nvidia-nemotron-3.5-lightning-30b-a3b  ctx=1048576  quant=nvfp4   tps=148.9  tag=moe_a3b
+  nvidia/nvidia-nemotron-3.5-lightning-30b-a3b  ctx=262144   quant=nvfp4   tps=148.9  tag=moe_a3b
   kwaipilot/kat-coder-v2.5-dev                  ctx=262144   quant=q8_k_m  tps=57.2   tag=fim
   qwen/qwen3.6-35b-a3b                          ctx=262144   quant=q8_k_m  tps=136.0  tag=moe_a3b
   qwen/qwen3.6-27b                              ctx=131072   quant=q8_k_m  tps=64.8   tag=stable
@@ -144,7 +144,7 @@ export const MACHINE_DUMP = `>> init apex-inference :: bypass marketing layers :
   release we patch locally and note it. we do not serve a model that cant stop.
 
 [limits_default]
-  rpm=600 tpm=2_000_000 max_concurrency=8 max_ctx=1048576
+  rpm=600 tpm=2_000_000 max_concurrency=8 max_ctx=262144
   429 returns retry-after. respect it or you get a longer one.
 
 [observer_control_plane]

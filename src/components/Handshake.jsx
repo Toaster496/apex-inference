@@ -104,7 +104,7 @@ export default function Handshake() {
     const curl = `curl -N https://api.apex-inference.xyz/v1/chat/completions \\
   -H "Authorization: Bearer ${key}" \\
   -H "Content-Type: application/json" \\
-  -d '{"model":"nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B","max_tokens":1048576,"stream":true,"messages":[{"role":"user","content":"ping"}]}'`
+  -d '{"model":"nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B","max_tokens":262144,"stream":true,"messages":[{"role":"user","content":"ping"}]}'`
 
     setPhase('streaming')
     const seq = [
